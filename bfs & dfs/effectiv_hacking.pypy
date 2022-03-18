@@ -1,0 +1,44 @@
+#백준 1325 효율적인 해킹
+#시간초과가 나서 pypy로 제출하니까 정답
+
+from collections import deque
+import sys
+
+n, m = map(int, sys.stdin.readline().split())
+graph = [[] for _ in range(n+1)]
+
+for _ in range(m):
+    a, b = map(int, sys.stdin.readline().split())
+    graph[b].append(a)
+
+
+def bfs(x):
+    q = deque([x])
+    visited[x] = True
+    cnt = 0
+    
+    while q:
+        v = q.popleft()
+        cnt += 1
+        for i in graph[v]:
+            if not visited[i]:
+                q.append(i)
+                visited[i] = True
+    return cnt
+
+temp = 0
+result = []
+for j in range(1, n+1):
+    visited = [False]*(n+1)
+    r = bfs(j)
+    if r >= temp:
+        if r > temp:
+            result = []
+        result.append(j)
+        temp = r 
+
+
+for i in range(len(result)):
+    print(result[i], end = ' ')
+    
+    
