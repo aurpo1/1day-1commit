@@ -1,3 +1,5 @@
+// 프로그래머스 모의고사
+
 function solution(answers) {
   var answer = [];
   let result = [0, 0, 0];
