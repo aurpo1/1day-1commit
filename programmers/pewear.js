@@ -25,5 +25,3 @@ function solution(n, lost, reserve) {
 
   return answer;
 }
-
-console.log(solution(10, [1,2,3,5], [4,5,6,8]));
