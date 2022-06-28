@@ -1,3 +1,6 @@
+// 삽입 정렬
+// 시간 복잡도 O(n^2)
+
 function insertSort(arr) {
   for(let i=1; i<input.length; i++) {
     let temp = arr[i];
