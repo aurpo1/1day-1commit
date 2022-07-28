@@ -15,19 +15,6 @@ let count = 0;
 
 for (let i = 0; i < n; i++) {
   let tempCount = 0;
-  // switch (input[i] - input[i - 1]) {
-  //   case 1:
-  //     tempCount++;
-  //     if (tempCount > count) {
-  //       count = tempCount;
-  //     }
-  //     break;
-  //   case 0:
-  //     break;
-  //   default:
-  //     tempCount = 0;
-  //     break;
-  // }
   for (let j = i + 1; j < i + 5; j++) {
     if (input[j] - input[i] < 5) {
       tempCount++;
