@@ -19,7 +19,6 @@ for (let i = 1; i <= n - 2; i++) {
     if (!combiList[i].includes(j)) {
       for (let k = j + 1; k <= n; k++) {
         if (!combiList[i].includes(k) && !combiList[j].includes(k)) {
-          console.log(i, j, k);
           cnt++;
         }
       }
