@@ -9,8 +9,6 @@ for (let i = 0; i < n; i++) {
 }
 
 let combi = [];
-let temp = [];
-
 let diff = Math.abs(flavor[0][0] - flavor[0][1]);
 let visited = Array(n).fill(false);
 
@@ -18,7 +16,7 @@ const makeCombi = (start, num, cnt) => {
   if (num === cnt) {
     let sour = 1;
     let bitter = 0;
-    temp.map((el) => {
+    combi.map((el) => {
       sour *= flavor[el][0];
       bitter += flavor[el][1];
     });
@@ -28,17 +26,16 @@ const makeCombi = (start, num, cnt) => {
   for (let i = start; i < n; i++) {
     if (!visited[i]) {
       visited[i] = true;
-      temp.push(i);
+      combi.push(i);
       makeCombi(i, num + 1, cnt);
 
       visited[i] = false;
-      temp.pop();
+      combi.pop();
     }
   }
 };
 
 for (let i = 1; i <= n; i++) {
-  combi = [];
   makeCombi(0, 0, i);
 }
 console.log(diff);
