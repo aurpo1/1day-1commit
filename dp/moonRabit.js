@@ -5,6 +5,7 @@ const input = fs.readFileSync("input.txt").toString().trim();
 const n = Number(input);
 
 let dp = Array(100, 001);
+dp[0] = 0;
 dp[1] = 1;
 dp[2] = 1;
 dp[3] = 2;
